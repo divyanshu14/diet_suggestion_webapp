@@ -29,6 +29,7 @@ class DietSuggestionApiConfig(AppConfig):
     def load_food_nutrients(food_nutrients_folder_path):
         food_nutrients_dict = []
         all_food_nutrients_files = os.listdir(food_nutrients_folder_path)
+        all_food_nutrients_files.sort()
         for food_nutrients_file in all_food_nutrients_files:
             food_nutrients_file_fpath = os.path.join(food_nutrients_folder_path, food_nutrients_file)
             with open(food_nutrients_file_fpath) as f:
